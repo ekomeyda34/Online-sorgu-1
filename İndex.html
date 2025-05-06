@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nöbetçi Eczane ve Hizmet Kesintileri</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="my-4 text-center">
+            <h1>İstanbul Nöbetçi Eczaneler</h1>
+            <p class="text-muted">Güncel hizmet kesintileri ve eczane bilgileri</p>
+        </header>
+
+        <div class="row">
+            <!-- Nöbetçi Eczaneler -->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5>🏥 Nöbetçi Eczaneler (Kadıköy)</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="pharmacyLoading" class="text-center">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Yükleniyor...</span>
+                            </div>
+                        </div>
+                        <div id="pharmacyList" class="list-group"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hizmet Kesintileri -->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-danger text-white">
+                        <h5>⚠️ Hizmet Kesintileri</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="nav nav-tabs" id="outageTabs">
+                            <li class="nav-item">
+                                <button class="nav-link active" data-bs-toggle="tab" 
+                                        data-bs-target="#waterTab" type="button">Su Kesintisi</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" data-bs-toggle="tab" 
+                                        data-bs-target="#powerTab" type="button">Elektrik</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content mt-3">
+                            <div id="waterTab" class="tab-pane fade show active">
+                                <div id="waterLoading" class="text-center">
+                                    <div class="spinner-border text-primary" role="status"></div>
+                                </div>
+                                <div id="waterOutages"></div>
+                            </div>
+                            <div id="powerTab" class="tab-pane fade">
+                                <div id="powerLoading" class="text-center">
+                                    <div class="spinner-border text-primary" role="status"></div>
+                                </div>
+                                <div id="powerOutages"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-4 py-3 text-center text-muted">
+            <p>Son güncelleme: <span id="updateTime"></span></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
